@@ -11,6 +11,7 @@ const refs = {
 }
 
 refs.showMoreBtn.style.display = "none";
+refs.clearBtn.style.display = "none";
 
 const appendCardsMarkup = imgs => {
   refs.gallery.insertAdjacentHTML('beforeend', cardsTpl(imgs))
@@ -35,11 +36,14 @@ const onSearch = e => {
     clearCardsMarkup()
     appendCardsMarkup(hits)
     refs.showMoreBtn.style.display = "block";
+    refs.clearBtn.style.display = "block";
   })
 }
 const onClearBtnClick = () => {
   refs.showMoreBtn.style.display = "none";
+  refs.clearBtn.style.display = "none";
   refs.gallery.innerHTML = '';
+  refs.searchForm.elements[0].value = ''
 
 }
 
